@@ -5,10 +5,11 @@ builders:
       - jsonModelBuilder
       - serializerBuilder
     auto_apply: root_package
-    build_to: source
-    build_extensions: 
-      .dart":
-        - ".angel.dart"
+    build_to: cache
+    build_extensions:
+      .dart:
+        - ".angel3_serialize.g.part"
+        - ".angel3_serialize_serializer.g.part"
     applies_builders: ["source_gen|combining_builder", "source_gen|part_cleanup"]
     runs_before: ["angel3_orm_generator|angel3_orm"]
   typescript:
