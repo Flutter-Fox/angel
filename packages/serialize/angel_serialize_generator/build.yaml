@@ -6,10 +6,7 @@ builders:
       - serializerBuilder
     auto_apply: root_package
     build_to: cache
-    build_extensions:
-      .dart:
-        - ".angel3_serialize.g.part"
-        - ".angel3_serialize_serializer.g.part"
+    build_extensions: {".dart": [".angel.dart"]}
     applies_builders: ["source_gen|combining_builder", "source_gen|part_cleanup"]
     runs_before: ["angel3_orm_generator|angel3_orm"]
   typescript:
@@ -21,6 +18,16 @@ builders:
     build_extensions:
       .dart:
         - ".d.ts"
+
+# builders:
+#   hive_generator:
+#     import: "package:hive_generator/hive_generator.dart"
+#     builder_factories: ["getBuilder"]
+#     build_extensions: {".dart": [".hive.dart"]}
+#     auto_apply: dependents
+#     build_to: source
+#     applies_builders: ["source_gen|combining_builder"]
+
 # targets:
 #   _book:
 #     sources:
