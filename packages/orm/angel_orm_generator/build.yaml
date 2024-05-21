@@ -5,11 +5,10 @@ builders:
       - migrationBuilder
       - ormBuilder
     auto_apply: root_package
-    build_to: cache
-    build_extensions:
-      .dart:
-        - ".angel3_migration.g.part"
-        - ".angel3_orm.g.part"
+    build_to: source
+    build_extensions: 
+      .dart":
+        - ".angel.dart"
     required_inputs:
       - angel3_serialize.g.part
       - angel3_serialize_serializer.g.part
