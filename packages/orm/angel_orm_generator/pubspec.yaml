@@ -10,7 +10,10 @@ dependencies:
   angel3_serialize: ^8.0.0
   angel3_orm: ^8.0.0
   angel3_serialize_generator:
-    path: ../../serialize/angel_serialize_generator
+    git:
+      url: https://github.com/Flutter-Fox/angel.git
+      ref: definitelyme-patch-1
+      path: packages/serialize/angel_serialize_generator
   analyzer: ^6.2.0
   inflection3: ^0.5.3+2
   build: ^2.4.0
